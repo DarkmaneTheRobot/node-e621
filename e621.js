@@ -7,17 +7,15 @@ Agent: Dantè (by Darkmane on e621)
 
   var request = require("request");
 
-  var options = { method: 'GET',
-    url: 'https://e621.net/post/index.json',
-    json: true,
-    qs: { tags: 'm/m%20order:random+rating:e', limit: '1' },
-    headers:
-     { 'Postman-Token': 'baf9948b-85fb-4a39-9c74-2f71afa67b7e',
-       'Cache-Control': 'no-cache',
-       'User-Agent': 'DarkBartneder/1.0 (by Darkmane on e621)' } };
-
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-
-    console.log(body.file_url);
-  });
+  request.get({
+    "method" : "GET",
+    "uri": "https://e621.net/post/index.json?tags=m/m%20order:random+rating:e&limit=1",
+    "followRedirect":false,
+    "headers": {
+      'User-Agent': 'DarkBartneder/1.0 (by Darkmane on e621)'
+    }
+  },function (err, res, body) {
+  console.log(err);
+  console.log(res.statusCode);
+  console.log(body);
+});
