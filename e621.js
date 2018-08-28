@@ -23,6 +23,8 @@ function random (tags, rating, agent) {
     }
 
     else{
+      console.log(body);
+      return;
       return body;
     }
   });
