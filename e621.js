@@ -5,9 +5,6 @@ Rating: E
 Agent: Dantè (by Darkmane on e621)
 */
 
-
-// Get random image:
-function random (tags, rating, agent) {
   var request = require("request");
 
   var options = { method: 'GET',
@@ -23,11 +20,3 @@ function random (tags, rating, agent) {
 
     console.log(body);
   });
-
-}
-
-module.exports = {
-  random: random
-}
-
-random();
