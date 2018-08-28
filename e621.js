@@ -5,18 +5,36 @@ Rating: E
 Agent: Dantè (by Darkmane on e621)
 */
 
-  var request = require("request");
+var http = require("https");
 
-  var options = { method: 'GET',
-    url: 'https://e621.net/post/index.json',
-    qs: { tags: 'm/m%20order:random+rating:e', limit: '1' },
-    headers:
-     { 'Postman-Token': 'baf9948b-85fb-4a39-9c74-2f71afa67b7e',
-       'Cache-Control': 'no-cache',
-       'User-Agent': 'DarkBartneder/1.0 (by Darkmane on e621)' } };
+var options = {
+  "method": "GET",
+  "hostname": [
+    "e621",
+    "net"
+  ],
+  "path": [
+    "post",
+    "index.json"
+  ],
+  "headers": {
+    "User-Agent": "DarkBartneder/1.0 (by Darkmane on e621)",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "41e0c23b-0201-45ff-acfb-eae9c896a96c"
+  }
+};
 
-  request(options, function (error, response, body) {
-    if (error) throw new Error(error);
+var req = http.request(options, function (res) {
+  var chunks = [];
 
-    console.log(body);
+  res.on("data", function (chunk) {
+    chunks.push(chunk);
   });
+
+  res.on("end", function () {
+    var body = Buffer.concat(chunks);
+    console.log(body.toString());
+  });
+});
+
+req.end();
