@@ -4,7 +4,7 @@ Tags: M/M
 Rating: E
 Agent: Dantè (by Darkmane on e621)
 */
-function random(tags, rating, limit)
+function random(tags, rating, limit) {
 var request = require("request");
   request.get({
     "method" : "GET",
@@ -17,3 +17,4 @@ var request = require("request");
   if(err) return err;
   else return body;
 });
+}
