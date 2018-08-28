@@ -4,10 +4,8 @@ Tags: M/M
 Rating: E
 Agent: Dantè (by Darkmane on e621)
 */
-
-  var request = require("request");
-
 function random(tags, rating, limit)
+var request = require("request");
   request.get({
     "method" : "GET",
     "uri": "https://e621.net/post/index.json?tags=" + tags + "%20order:random+rating:" + rating +"&limit=" + limit,
