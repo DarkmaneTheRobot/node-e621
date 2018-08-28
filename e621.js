@@ -23,3 +23,7 @@ function random (tags, rating, agent) {
     else{return body;}
   });
 }
+
+module.exports = {
+  random: random
+}
