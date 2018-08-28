@@ -18,9 +18,13 @@ function random (tags, rating, agent) {
 
   request(options, function (error, response, body) {
     // Return the error to the user
-    if (error){return error;}
+    if (error){
+      return error;
+    }
 
-    else{return body;}
+    else{
+      return body;
+    }
   });
 }
 
