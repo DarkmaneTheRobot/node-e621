@@ -12,14 +12,14 @@ function random (tags, rating, agent) {
 
   var options = { method: 'GET',
     url: 'https://e621.net/post/index.json',
-    qs: { tags: tags + '%20order:random+rating:'+ rating, limit: '1' },
+    qs: { tags: 'm/m%20order:random+rating:e', limit: '1' },
     headers:
-     { 'Postman-Token': '630c7d85-9e2e-4037-b411-b29cba7e7796',
+     { 'Postman-Token': 'baf9948b-85fb-4a39-9c74-2f71afa67b7e',
        'Cache-Control': 'no-cache',
-       'User-Agent': agent} };
+       'User-Agent': 'DarkBartneder/1.0 (by Darkmane on e621)' } };
 
   request(options, function (error, response, body) {
-    if (error) return error;
+    if (error) throw new Error(error);
 
     console.log(body);
   });
