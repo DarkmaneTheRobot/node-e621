@@ -9,10 +9,7 @@ var http = require("https");
 
 var options = {
   "method": "GET",
-  "hostname": [
-    "e621",
-    "net"
-  ],
+  "hostname": "e621.net"
   "path": [
     "post",
     "index.json"
