@@ -14,6 +14,7 @@ var request = require("request");
       'User-Agent': 'E621APIWrapper/1.0 (by Darkmane on e621)'
     }
   },function (err, res, body) {
+  console.log(body);
   return body;
 });
 }
