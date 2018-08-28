@@ -13,8 +13,7 @@ function random(tags, rating, limit, callback) {
       'User-Agent': 'E621APIWrapper/1.0 (by Darkmane on e621)'
     }
   },function (err, res, body) {
-    var post = JSON.parse(body);
-    callback(post);
+    callback(body);
   });
 
 }
