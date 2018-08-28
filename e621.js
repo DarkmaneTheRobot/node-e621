@@ -29,3 +29,5 @@ function random (tags, rating, agent) {
 module.exports = {
   random: random
 }
+
+random();
