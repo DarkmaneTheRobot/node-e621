@@ -9,11 +9,7 @@ var http = require("https");
 
 var options = {
   "method": "GET",
-  "hostname": "e621.net"
-  "path": [
-    "post",
-    "index.json"
-  ],
+  "hostname": "https://e621.net/post/index.json?tags=m/m%20order:random+rating:e&limit=1"
   "headers": {
     "User-Agent": "DarkBartneder/1.0 (by Darkmane on e621)",
     "Cache-Control": "no-cache",
