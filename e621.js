@@ -18,3 +18,7 @@ var request = require("request");
   else return body;
 });
 }
+
+module.exports = {
+  random: random
+}
