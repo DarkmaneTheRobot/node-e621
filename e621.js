@@ -8,26 +8,22 @@ Agent: Dantè (by Darkmane on e621)
 
 // Get random image:
 function random (tags, rating, agent) {
+  var request = require("request");
+
   var options = { method: 'GET',
     url: 'https://e621.net/post/index.json',
-    qs: { tags: tags +'%20order:random+rating:'+ rating, limit: '1' },
+    qs: { tags: tags + '%20order:random+rating:'+ rating, limit: '1' },
     headers:
-     { 'Postman-Token': '189a389a-a453-4792-a8ed-8dfa3e491c53',
+     { 'Postman-Token': '630c7d85-9e2e-4037-b411-b29cba7e7796',
        'Cache-Control': 'no-cache',
-       'User-Agent': agent } };
+       'User-Agent': agent} };
 
   request(options, function (error, response, body) {
-    // Return the error to the user
-    if (error){
-      return error;
-    }
+    if (error) return error;
 
-    else{
-      console.log(body);
-      return;
-      return body;
-    }
+    console.log(body);
   });
+
 }
 
 module.exports = {
